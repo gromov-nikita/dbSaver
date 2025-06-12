@@ -15,6 +15,6 @@ public class Employee {
     private String name;
     private String mail;
     private LocalDate startWorkDate;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Assignment> assignments;
 }

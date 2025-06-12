@@ -14,6 +14,6 @@ public class Project {
     private String name;
     private String description;
     private String domain;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Assignment> assignments;
 }
