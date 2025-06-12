@@ -17,7 +17,6 @@ public class LocalDateJsonDeserializer extends JsonDeserializer<LocalDate> {
         String dateStr = p.getText();
         Matcher matcher = DATE_PATTERN.matcher(dateStr);
         String delimiter = matcher.group(2);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d" + delimiter + "M" + delimiter + "yyyy");
-        return LocalDate.parse(dateStr, formatter);
+        return LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("d" + delimiter + "M" + delimiter + "yyyy"));
     }
 }
