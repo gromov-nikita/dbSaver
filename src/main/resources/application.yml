@@ -1,1 +1,10 @@
-spring.application.name=dbSaver
+spring:
+  application:
+    name: dbSaver
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kafka
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
