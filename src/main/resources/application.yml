@@ -8,3 +8,17 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: db-saver-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+    topic-name:
+      employee: employee
+      assignment: assignment
+      project: project
+  scheduler:
+    reader:
+      csv-interval: 300000

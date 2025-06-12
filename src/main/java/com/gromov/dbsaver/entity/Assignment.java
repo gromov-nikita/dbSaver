@@ -1,5 +1,8 @@
 package com.gromov.dbsaver.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.gromov.dbsaver.service.LocalDateJsonDeserializer;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,6 +18,8 @@ public class Assignment {
     private Employee employee;
     @ManyToOne(fetch = FetchType.LAZY)
     private Project project;
+    @JsonDeserialize(using = LocalDateJsonDeserializer.class)
     private LocalDate startDate;
+    @JsonDeserialize(using = LocalDateJsonDeserializer.class)
     private LocalDate endDate;
 }

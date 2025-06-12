@@ -1,4 +1,4 @@
-package com.gromov.dbsaver.service;
+package com.gromov.dbsaver.service.dao;
 
 import com.gromov.dbsaver.dao.AssignmentRepo;
 import com.gromov.dbsaver.entity.Assignment;
