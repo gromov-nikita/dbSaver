@@ -14,7 +14,7 @@ public class EmployeeService {
     public Employee save(Employee employee) {
         return employeeRepo.save(employee);
     }
-    private List<Employee> saveAll(List<Employee> employeeGroup) {
+    public List<Employee> saveAll(List<Employee> employeeGroup) {
         return employeeRepo.saveAll(employeeGroup);
     }
 }

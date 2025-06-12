@@ -14,7 +14,7 @@ public class ProjectService {
     public Project save(Project project) {
         return projectRepo.save(project);
     }
-    private List<Project> saveAll(List<Project> projectGroup) {
+    public List<Project> saveAll(List<Project> projectGroup) {
         return projectRepo.saveAll(projectGroup);
     }
 }

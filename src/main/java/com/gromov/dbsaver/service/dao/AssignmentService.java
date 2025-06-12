@@ -14,7 +14,7 @@ public class AssignmentService {
     public Assignment save(Assignment assignment) {
         return assignmentRepo.save(assignment);
     }
-    private List<Assignment> saveAll(List<Assignment> assignmentGroup) {
+    public List<Assignment> saveAll(List<Assignment> assignmentGroup) {
         return assignmentRepo.saveAll(assignmentGroup);
     }
 }

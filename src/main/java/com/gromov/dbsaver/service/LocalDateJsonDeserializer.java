@@ -11,7 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class LocalDateJsonDeserializer extends JsonDeserializer<LocalDate> {
+
     private static final Pattern DATE_PATTERN = Pattern.compile("^(\\d{1,2})(.)(\\d{1,2})\\2(\\d{4})$");
+
     @Override
     public LocalDate deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         String dateStr = p.getText();
