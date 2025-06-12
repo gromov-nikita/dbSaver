@@ -11,10 +11,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AssignmentService {
     private final AssignmentRepo assignmentRepo;
-    public void save(Assignment assignment) {
-        assignmentRepo.save(assignment);
+    public Assignment save(Assignment assignment) {
+        return assignmentRepo.save(assignment);
     }
-    private void saveAll(List<Assignment> assignmentGroup) {
-        assignmentRepo.saveAll(assignmentGroup);
+    private List<Assignment> saveAll(List<Assignment> assignmentGroup) {
+        return assignmentRepo.saveAll(assignmentGroup);
     }
 }

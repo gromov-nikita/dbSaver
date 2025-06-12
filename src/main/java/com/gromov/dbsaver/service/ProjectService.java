@@ -12,10 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProjectService {
     private final ProjectRepo projectRepo;
-    public void save(Project project) {
-        projectRepo.save(project);
+    public Project save(Project project) {
+        return projectRepo.save(project);
     }
-    private void saveAll(List<Project> projectGroup) {
-        projectRepo.saveAll(projectGroup);
+    private List<Project> saveAll(List<Project> projectGroup) {
+        return projectRepo.saveAll(projectGroup);
     }
 }
