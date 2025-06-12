@@ -1,15 +1,17 @@
 package com.gromov.dbsaver.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.gromov.dbsaver.service.LocalDateJsonDeserializer;
+import com.gromov.dbsaver.service.json.LocalDateJsonDeserializer;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Assignment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

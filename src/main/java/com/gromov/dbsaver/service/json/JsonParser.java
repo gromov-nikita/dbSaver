@@ -1,4 +1,4 @@
-package com.gromov.dbsaver.service;
+package com.gromov.dbsaver.service.json;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -12,9 +12,9 @@ public class JsonParser {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    public <T> List<T> parseJson(String message) {
+    public <T> List<T> parseJson(String message,Class<T> clazz) {
         try {
-            return objectMapper.readValue(message, new TypeReference<List<T>>() {});
+            return objectMapper.readValue(message, objectMapper.getTypeFactory().constructCollectionType(List.class, clazz));
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }

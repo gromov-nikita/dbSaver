@@ -1,4 +1,4 @@
-package com.gromov.dbsaver.service;
+package com.gromov.dbsaver.service.json;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -18,6 +18,7 @@ public class LocalDateJsonDeserializer extends JsonDeserializer<LocalDate> {
     public LocalDate deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
         String dateStr = p.getText();
         Matcher matcher = DATE_PATTERN.matcher(dateStr);
+        if (!matcher.find()) throw new IllegalArgumentException("Invalid date format: " + dateStr);
         String delimiter = matcher.group(2);
         return LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("d" + delimiter + "M" + delimiter + "yyyy"));
     }

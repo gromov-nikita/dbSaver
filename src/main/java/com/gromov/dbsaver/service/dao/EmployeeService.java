@@ -17,4 +17,7 @@ public class EmployeeService {
     public List<Employee> saveAll(List<Employee> employeeGroup) {
         return employeeRepo.saveAll(employeeGroup);
     }
+    public Employee findById(Integer id) {
+        return employeeRepo.findById(id).orElse(null);
+    }
 }
