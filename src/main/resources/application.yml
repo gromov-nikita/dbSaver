@@ -25,3 +25,8 @@ spring:
   scheduler:
     reader:
       csv-interval: 300000
+grpc:
+  client:
+    notification-service:
+      address: 'static://localhost:9091'
+      negotiationType: plaintext
