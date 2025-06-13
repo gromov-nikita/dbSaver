@@ -8,6 +8,7 @@ import com.gromov.dbsaver.service.dao.EmployeeService;
 import com.gromov.dbsaver.service.dao.ProjectService;
 import com.gromov.dbsaver.service.json.JsonParser;
 import com.gromov.dbsaver.service.mapper.AssignmentMapper;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,7 @@ public class KafkaConsumerListener {
         employeeService.saveAll(jsonParser.parseJson(message, Employee.class));
     }
     @KafkaListener(topics = "${spring.kafka.topic-name.assignment}", groupId = "${spring.kafka.consumer.group-id}")
+    @Transactional
     public void consumeAssignment(String message) {
         assignmentService.saveAll(assignmentMapper.toEntity(jsonParser.parseJson(message, AssignmentDto.class)));
     }
