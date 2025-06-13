@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GrpcNotificationClient {
 
-    @GrpcClient("notification-service") // имя из application.yml grpc.client.notification-service
+    @GrpcClient("notification-service")
     private NotificationServiceGrpc.NotificationServiceBlockingStub blockingStub;
 
     public EventResponse notifyEvent(EventRequest request) {
